@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- Copyright IBM Corporation 2013. All Rights Reserved. -->
+<!-- Example VMC file for two workers to which the master
+     connects via TCP/IP. The configuration uses a fixed port on the localhost.
+     It also creates both workers on the same host. Adapt as needed.
+-->
+<vmc>
+  <machine name="machine1">
+    <transport type="TCP/IP">
+      <address host="localhost" port="12345" />
+    </transport>
+  </machine>
+  <machine name="machine2">
+    <transport type="TCP/IP">
+      <address host="localhost" port="12345" />
+    </transport>
+  </machine>
+</vmc>

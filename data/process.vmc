@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- Copyright IBM Corporation 2013. All Rights Reserved. -->
+<!-- Example VMC file for two workers to which the master
+     connects via the process transport. By default this configuration
+     will just create two new processes on the local machine. In order
+     to connect to a remote machine uncomment the sections marked SSH
+     and replace "remote.com" by a real host name.
+-->
+<vmc>
+  <machine name="machine1">
+    <transport type="process">
+      <cmdline>
+<!-- SSH
+        <item value="ssh"/>
+        <item value="remote.com"/>
+-->
+        <item value="../../../bin/x86_win32/cplex.exe"/>
+        <item value="-worker=process"/>
+<!-- SSH        <item value="-stdio"/> -->
+        <item value="-libpath=../../../bin/x86_win32"/>
+      </cmdline>
+    </transport>
+  </machine>
+  <machine name="machine2">
+    <transport type="process">
+      <cmdline>
+<!-- SSH
+        <item value="ssh"/>
+        <item value="remote.com"/>
+-->
+        <item value="../../../bin/x86_win32/cplex.exe"/>
+        <item value="-worker=process"/>
+<!-- SSH        <item value="-stdio"/> -->
+        <item value="-libpath=../../../bin/x86_win32"/>
+      </cmdline>
+    </transport>
+  </machine>
+</vmc>
